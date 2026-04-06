@@ -580,8 +580,9 @@ window.addEventListener('wheel', this._onWheel, { passive: false })
       Object.keys(users).forEach((id) => {
         if (id === this.myId) {
           if (this.myPlayer) {
-            this.myPlayer.x = users[id].x
-            this.myPlayer.y = users[id].y
+            // this.myPlayer.x = users[id].x
+            // this.myPlayer.y = users[id].y
+             return
           }
           return
         }
