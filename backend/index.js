@@ -2,15 +2,37 @@ import express from 'express'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import cors from 'cors'
-
+import dotenv from 'dotenv'
+dotenv.config()
 const app = express()
-app.use(cors({ origin: ['http://localhost:5173', "https://my-space-beta.vercel.app"] }))
+
+
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,       
+  "http://localhost:5173",        
+  "http://127.0.0.1:5173"         
+].filter(Boolean)
+
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true)
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  }
+}))
 
 const server = createServer(app)
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5174', 'http://192.168.29.104:5173', 'http://localhost:5173', "https://my-space-beta.vercel.app"],
-  },
+    origin: allowedOrigins,
+    methods: ["GET", "POST"]
+  }
 })
 
 const users = {}

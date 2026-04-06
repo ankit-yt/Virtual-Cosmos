@@ -87,7 +87,7 @@ export default function ChatPanel({ roomId, roomMembers, messages, setMessages, 
 
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a3a]">
-          <div className="flex flex-col">
+          <div className="flex justify-between w-full items-center">
             <span className="text-white text-sm font-semibold">Chat</span>
             {roomId && (
               <span className="text-[#555] text-[10px] font-mono mt-0.5">
@@ -95,11 +95,7 @@ export default function ChatPanel({ roomId, roomMembers, messages, setMessages, 
               </span>
             )}
           </div>
-          <div className="w-5 h-5 bg-[#2a2a3a] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#3a3a4a] transition">
-            <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 stroke-[#aaa] fill-none" strokeWidth="1.4">
-              <path d="M8 2L2 8M2 2l6 6" />
-            </svg>
-          </div>
+          
         </div>
 
         {/* Body */}

@@ -58,7 +58,7 @@ export default function EnterScreen({ onEnter }) {
             </svg>
           </div>
           <div className="text-center">
-            <h1 className="text-white text-2xl font-bold tracking-tight">My Space</h1>
+            <h1 className="text-white text-2xl font-bold tracking-tight">Virtual Cosmos</h1>
             <p className="text-[#555] text-sm mt-1">A virtual office for your team</p>
           </div>
         </div>

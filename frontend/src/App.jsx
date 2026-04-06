@@ -66,7 +66,7 @@ function App() {
               <path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4zm0 1.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" />
             </svg>
           </div>
-          <span className="text-[#ccc] text-sm font-medium">My Space</span>
+          <span className="text-[#ccc] text-sm font-medium">Virtual Cosmos</span>
         </div>
 
         <div className="flex items-center gap-2">
