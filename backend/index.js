@@ -1,15 +1,13 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import cors from 'cors'
-import dotenv from 'dotenv'
-dotenv.config()
 const app = express()
 
-
-
 const allowedOrigins = [
-  process.env.FRONTEND_URL,       
+ 'https://virtual-cosmos-sigma.vercel.app',       
   "http://localhost:5173",        
   "http://127.0.0.1:5173"         
 ].filter(Boolean)
