@@ -4,6 +4,8 @@ A real-time multiplayer virtual office where your chat room is determined by **p
 
 Built with **React**, **PixiJS**, **Socket.IO**, and **Node.js**.
 
+🔗 **Live Demo:** [my-space-beta.vercel.app](https://my-space-beta.vercel.app)
+
 ---
 
 ## ✨ Features
@@ -20,21 +22,31 @@ Built with **React**, **PixiJS**, **Socket.IO**, and **Node.js**.
 
 ## 🛠️ Tech Stack
 
-| Layer    | Technology                             |
-|----------|----------------------------------------|
-| Frontend | React + Vite + Tailwind CSS            |
-| Renderer | PixiJS v8                              |
-| Realtime | Socket.IO                              |
-| Backend  | Node.js + Express + Socket.IO (server) |
+| Layer      | Technology                              |
+|------------|-----------------------------------------|
+| Frontend   | React + Vite + Tailwind CSS             |
+| Renderer   | PixiJS v8                               |
+| Realtime   | Socket.IO                               |
+| Backend    | Node.js + Express + Socket.IO           |
+| Deployment | Vercel (frontend) + Render (backend)    |
 
 ---
 
-## 🚀 Getting Started
+## 🌍 Deployment
+
+| Service  | URL                                                              |
+|----------|------------------------------------------------------------------|
+| Frontend | [my-space-beta.vercel.app](https://my-space-beta.vercel.app)    |
+| Backend  | [myspace-bvnn.onrender.com](https://myspace-bvnn.onrender.com)  |
+
+---
+
+## 🚀 Getting Started (Local)
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or pnpm
+- npm
 
 ### 1. Clone the repo
 
@@ -43,28 +55,23 @@ git clone https://github.com/your-username/virtual-cosmos.git
 cd virtual-cosmos
 ```
 
-### 2. Start the server
+### 2. Setup & run the backend
 
 ```bash
 cd backend
 npm install
-node index.js
+npm run dev
 ```
 
 > Server runs on `http://localhost:3001`
 
-### 3. Configure environment
-
-In the `frontend/` folder, create a `.env` file:
+Create a `.env` file inside `backend/`:
 
 ```env
-VITE_SERVER_URL=http://YOUR_LOCAL_IP:3001
+FRONTED_URL=http://localhost:5173
 ```
 
-> Run `ipconfig` (Windows) or `ifconfig` (Mac/Linux) to find your local IP.
-> This lets other devices on the same network join your space.
-
-### 4. Start the client
+### 3. Setup & run the frontend
 
 ```bash
 cd frontend
@@ -73,6 +80,12 @@ npm run dev
 ```
 
 > App runs on `http://localhost:5173`
+
+Create a `.env` file inside `frontend/`:
+
+```env
+VITE_BACKEND_URL=http://localhost:3001
+```
 
 ---
 
@@ -133,9 +146,17 @@ The server runs a proximity graph every time any player moves:
 
 ## 📦 Environment Variables
 
-| Variable          | Description               | Default                 |
-|-------------------|---------------------------|-------------------------|
-| `VITE_SERVER_URL` | WebSocket server address  | `http://localhost:3001` |
+### Frontend (`frontend/.env`)
+
+| Variable           | Description               | Example                             |
+|--------------------|---------------------------|-------------------------------------|
+| `VITE_BACKEND_URL` | Backend WebSocket server  | `https://myspace-bvnn.onrender.com` |
+
+### Backend (`backend/.env`)
+
+| Variable      | Description              | Example                              |
+|---------------|--------------------------|--------------------------------------|
+| `FRONTED_URL` | Allowed frontend origin  | `https://my-space-beta.vercel.app`   |
 
 ---
 
