@@ -67,7 +67,7 @@ export class PixiGame {
 
     this.init()
   }
-
+//-
   // ─── Init ──────────────────────────────────────────────────────────────────
 
   async init() {
@@ -508,7 +508,7 @@ export class PixiGame {
     return c
   }
 
-  // Animate bob per frame — call in gameLoop
+  // Animate bob per frame
   _animateAvatar(avatar, dt, isMoving = false) {
     if (isMoving || avatar._isMe) {
       avatar._animTimer += dt
